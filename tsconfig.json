@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "module": "esnext",
+        "target": "esnext",
+        "noImplicitReturns": true,
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "lib": [
+            "DOM.Iterable",
+            "DOM",
+            "EsNext"
+        ],
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
+    },
+    "include": [
+        "src",
+        "globals.d.ts"
+    ],
+}
