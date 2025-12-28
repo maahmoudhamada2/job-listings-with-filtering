@@ -1,79 +1,92 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @font-face {
-    font-family: 'League Spartan';
-    src: url('./assets/fonts/league-spartan-medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    descent-override: 10%;
+  font-family: "League Spartan";
+  src: url("./assets/fonts/league-spartan-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  descent-override: 10%;
 }
 
 @font-face {
-    font-family: 'League Spartan';
-    src: url('./assets/fonts/league-spartan-bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-    descent-override: 10%;
-    ascent-override: 90%;
+  font-family: "League Spartan";
+  src: url("./assets/fonts/league-spartan-bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  descent-override: 10%;
+  ascent-override: 90%;
 }
 
 @theme {
-    --color-gray-400: #7C8F8F;
-    --color-gray-300: #B7C4C4;
-    --color-green-50: #EFFAFA;
-    --color-green-350: #63BABA;
-    --color-green-400: #5CA5A5;
-    --color-green-900: #2B3939;
-    --font-league: 'League Spartan', sans-serif;
+  --color-gray-400: #7c8f8f;
+  --color-gray-300: #b7c4c4;
+  --color-green-50: #effafa;
+  --color-green-350: #63baba;
+  --color-green-400: #5ca5a5;
+  --color-green-900: #2b3939;
+  --font-league: "League Spartan", sans-serif;
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    @apply h-full font-league;
+  }
 
-    html,
-    body,
-    #root {
-        @apply h-full font-league
-    }
+  body {
+    background-color: var(--color-green-50);
+  }
 
-    body {
-        background-color: var(--color-green-50);
-    }
+  button {
+    @apply cursor-pointer;
+  }
 
-    button {
-        @apply cursor-pointer
-    }
+  img {
+    @apply pointer-events-none;
+  }
 
-    img {
-        @apply pointer-events-none
-    }
+  .text-primary {
+    @apply font-bold leading-normal tracking-[-0.15px] xl:leading-[110%] xl:tracking-[0];
+    font-size: clamp(1rem, 0.868rem + 0.5634vw, 1.375rem);
+    color: var(--color-green-900);
+  }
 
+  .text-secondary {
+    @apply font-bold leading-[100%] tracking-[-0.15px] xl:tracking-[0];
+    font-size: clamp(0.875rem, 0.787rem + 0.3756vw, 1.125rem);
+    color: var(--color-green-400);
+  }
 
-    .text-primary {
-        @apply font-bold leading-normal tracking-[-0.15px] xl:leading-[110%] xl:tracking-[0];
-        font-size: clamp(1rem, 0.868rem + 0.5634vw, 1.375rem);
-        color: var(--color-green-900);
-    }
+  .text-meta {
+    @apply font-medium tracking-[-0.15px] leading-[150%] xl:leading-[135%];
+    font-size: clamp(1rem, 0.956rem + 0.1878vw, 1.125rem);
+    color: var(--color-gray-400);
+  }
 
-    .text-secondary {
-        @apply font-bold leading-[100%] tracking-[-0.15px] xl:tracking-[0];
-        font-size: clamp(0.875rem, 0.787rem + 0.3756vw, 1.125rem);
-        color: var(--color-green-400);
-    }
+  .text-filter {
+    @apply text-[16px] font-bold leading-[150%] tracking-[-0.15px];
+    color: var(--color-green-400);
+  }
 
-    .text-meta {
-        @apply font-medium tracking-[-0.15px] leading-[150%] xl:leading-[135%];
-        font-size: clamp(1rem, 0.956rem + 0.1878vw, 1.125rem);
-        color: var(--color-gray-400);
-    }
+  .text-badge {
+    @apply font-bold text-[14px] text-white leading-[100%] tracking-[-0.15px];
+  }
+}
 
-    .text-filter {
-        @apply text-[16px] font-bold leading-[150%] tracking-[-0.15px];
-        color: var(--color-green-400);
-    }
+@layer components {
+  .card-container {
+    @apply flex flex-col xl:flex-row xl:justify-between xl:items-center 
+    px-5.25 xl:px-11.25 pb-8 xl:py-7.75
+    bg-white
+    border-l-[5px] border-green-400
+    rounded-[5px]
+    relative;
+  }
 
-    .text-badge {
-        @apply font-bold text-[14px] text-white leading-[100%] tracking-[-0.15px]
-    }
+  .filter-btn {
+    @apply bg-green-50 px-4 py-2 rounded-sm;
+  }
 }
