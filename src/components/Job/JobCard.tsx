@@ -1,10 +1,11 @@
 import { Job, JobHeaderData } from "@/types/job";
 import JobCardHeader from "./JobCardHeader";
 import JobCardFilters from "./JobCardFilters";
+import getImgUrl from "@/utils/getImgUrl";
 
 const JobCard = ({ job }: { job: Job }) => {
   const headerData: JobHeaderData = {
-    logoUrl: job.logo,
+    logoUrl: getImgUrl(job.logo),
     companyName: job.company,
     jobPosition: job.position,
     isNew: job.new,
