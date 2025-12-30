@@ -5,7 +5,7 @@ const JobCardFilters = ({ filterTags }: { filterTags: string[] }) => {
     <footer>
       <ul className="flex flex-wrap gap-2">
         {filterTags.map((tag) => (
-          <FilterItem key={tag} tagName={tag} />
+          <FilterItem key={tag} isBar={false} tagName={tag} />
         ))}
       </ul>
     </footer>
