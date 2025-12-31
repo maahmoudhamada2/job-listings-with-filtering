@@ -14,12 +14,12 @@ const FilterItem = ({ isBar, tagName, handleFn }: FilterItemProps) => {
           {tagName}
           <button
             onClick={handleFn}
-            className="p-2 bg-green-400 rounded-br-sm rounded-tr-sm">
+            className="p-2 bg-green-400 hover:bg-green-900 rounded-br-sm rounded-tr-sm">
             <img src={removeIcon} alt="remove filter icon" />
           </button>
         </li>
       ) : (
-        <li className="text-filter bg-green-50 rounded-sm">
+        <li className="text-filter bg-green-50 hover:bg-green-400 hover:text-white rounded-sm">
           <button onClick={handleFn} className="px-4 py-2">
             {tagName}
           </button>

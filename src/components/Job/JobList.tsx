@@ -15,7 +15,7 @@ const JobList = () => {
 
   return (
     <main
-      className="px-6 pb-12.5 xl:px-12.5
+      className="px-6 pb-12.5 md:px-12.5 xl:px-41.5
                  grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1
                  gap-x-4 gap-y-8.75 md:gap-y-15 xl:gap-y-6 xl:gap-x-4">
       {activeFilters.size > 0 && (

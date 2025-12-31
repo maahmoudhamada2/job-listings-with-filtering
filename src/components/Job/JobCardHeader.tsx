@@ -29,7 +29,9 @@ const JobCardHeader = ({ headerData }: { headerData: JobHeaderData }) => {
             )}
           </ul>
         </div>
-        <h2 className="text-primary">{jobPosition}</h2>
+        <h2 className="text-primary cursor-pointer hover:text-green-400">
+          {jobPosition}
+        </h2>
         <JobCardMetas metas={metas} />
       </div>
     </header>

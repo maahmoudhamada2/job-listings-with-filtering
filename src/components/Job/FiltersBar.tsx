@@ -34,7 +34,7 @@ const FiltersBar = ({ activeFilters, setFiltersList }: FilterBarProps) => {
         </ul>
         <button
           onClick={() => setFiltersList(new Set())}
-          className="text-filter text-gray-300">
+          className="text-filter text-gray-300 hover:text-green-400">
           Clear
         </button>
       </div>
