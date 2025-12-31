@@ -22,7 +22,7 @@ const JobList = () => {
         />
       )}
       {filteredJobs.map((job) => (
-        <JobCard job={job} setActiveFilters={setActiveFilters} />
+        <JobCard key={job.id} job={job} setActiveFilters={setActiveFilters} />
       ))}
     </main>
   );
