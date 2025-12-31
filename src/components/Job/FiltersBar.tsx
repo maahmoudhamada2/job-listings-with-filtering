@@ -1,6 +1,19 @@
+import { Dispatch, SetStateAction } from "react";
 import FilterItem from "./FilterItem";
 
-const FiltersBar = ({ filtersList }: { filtersList: string[] }) => {
+interface FilterBarProps {
+  activeFilters: Set<string>;
+  setFiltersList: Dispatch<SetStateAction<Set<string>>>;
+}
+
+const FiltersBar = ({ activeFilters, setFiltersList }: FilterBarProps) => {
+  const handleClick = (tag: string) => {
+    setFiltersList((prev) => {
+      const nextState = new Set(prev);
+      nextState.delete(tag);
+      return nextState;
+    });
+  };
   return (
     <div className="relative h-[2rem] md:max-xl:col-span-2">
       <div
@@ -10,11 +23,19 @@ const FiltersBar = ({ filtersList }: { filtersList: string[] }) => {
         px-[clamp(0.5rem,5vw,1.5rem)] py-5 max-sm:px-2 max-sm:py-4 
         ">
         <ul className="flex flex-wrap gap-[16px]">
-          {filtersList.map((filter) => (
-            <FilterItem isBar={true} tagName={filter} />
+          {[...activeFilters].map((filterTag) => (
+            <FilterItem
+              isBar={true}
+              tagName={filterTag}
+              handleFn={() => handleClick(filterTag)}
+            />
           ))}
         </ul>
-        <button className="text-filter text-gray-300">Clear</button>
+        <button
+          onClick={() => setFiltersList(new Set())}
+          className="text-filter text-gray-300">
+          Clear
+        </button>
       </div>
     </div>
   );
