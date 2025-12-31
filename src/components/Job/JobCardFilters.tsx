@@ -10,12 +10,14 @@ const JobCardFilters = ({
   filterTags,
   setActiveFilters,
 }: JobCardFiltersProp) => {
-  const handleClick = (tag: string) =>
+  const handleClick = (tag: string) => {
     setActiveFilters((prev) => {
       const next = new Set(prev);
       next.add(tag);
       return next;
     });
+    window.scroll({ top: 0 });
+  };
   return (
     <footer>
       <ul className="flex flex-wrap gap-2">
