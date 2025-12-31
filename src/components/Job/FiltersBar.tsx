@@ -25,6 +25,7 @@ const FiltersBar = ({ activeFilters, setFiltersList }: FilterBarProps) => {
         <ul className="flex flex-wrap gap-4">
           {[...activeFilters].map((filterTag) => (
             <FilterItem
+              key={filterTag}
               isBar={true}
               tagName={filterTag}
               handleFn={() => handleClick(filterTag)}
