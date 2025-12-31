@@ -85,4 +85,10 @@
     rounded-[5px]
     relative;
   }
+
+  .bg-header {
+    @apply w-full h-39
+     bg-green-400 bg-[url('./assets/images/bg-header-mobile.svg')] bg-no-repeat bg-cover
+     md:bg-[url('./assets/images/bg-header-desktop.svg')];
+  }
 }
