@@ -27,6 +27,8 @@
   --color-green-400: #5ca5a5;
   --color-green-900: #2b3939;
   --font-league: "League Spartan", sans-serif;
+  --shadow-primary: 0 15px 20px -5px #0d718226, 0 4px 4px #00000040;
+  --shadow-secondary: 0 15px 20px -5px #0d718226;
 }
 
 @layer base {

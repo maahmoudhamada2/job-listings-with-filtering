@@ -21,7 +21,7 @@ const FiltersBar = ({ activeFilters, setFiltersList }: FilterBarProps) => {
         rounded-[5px] bg-white 
         absolute -top-19
         px-[clamp(0.5rem,5vw,1.5rem)] py-5 max-sm:px-2 max-sm:py-4 
-        ">
+        shadow-secondary">
         <ul className="flex flex-wrap gap-4">
           {[...activeFilters].map((filterTag) => (
             <FilterItem

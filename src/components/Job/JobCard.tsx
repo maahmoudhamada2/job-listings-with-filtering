@@ -27,7 +27,7 @@ const JobCard = ({ job, setActiveFilters }: JobCardProps) => {
   ];
 
   return (
-    <article className="card-container gap-[clamp(1rem,5vw,1.5rem)]">
+    <article className="card-container gap-[clamp(1rem,5vw,1.5rem)] shadow-primary">
       <JobCardHeader headerData={headerData} />
       <hr className=" border-gray-300 xl:hidden" />
       <JobCardFilters
