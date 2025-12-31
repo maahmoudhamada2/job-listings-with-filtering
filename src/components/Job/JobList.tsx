@@ -14,7 +14,10 @@ const JobList = () => {
   }, [activeFilters]);
 
   return (
-    <main className="px-[24px]  pb-[50px] xl:px-[50px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-x-[16px] gap-y-[35px] md:gap-y-[60px] xl:gap-y-[24px] xl:gap-x-[16px]">
+    <main
+      className="px-6 pb-12.5 xl:px-12.5
+                 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1
+                 gap-x-4 gap-y-8.75 md:gap-y-15 xl:gap-y-6 xl:gap-x-4">
       {activeFilters.size > 0 && (
         <FiltersBar
           activeFilters={activeFilters}
